@@ -152,7 +152,27 @@ Thread.Sleep(1000);
 
 
 bool rollingratfight = true;
-bool spicyspiderfight = false;
+bool spicyspiderfight = true;
+
+static void ratfight()
+{
+
+bool rollingratfight = true;
+bool spicyspiderfight = true;
+
+int playerhp = 0;
+int playerhpmax = 0;
+int playerdamage = 0;
+
+int rollingrathp = 50;
+int rollingratdamage = 5;
+
+int spicyspiderhp = 250;
+int spicyspiderdamage = 20;
+
+int tremblingtrollhp = 1000;
+int tremblingtrolldamage = 75;
+
 
 while(rollingratfight == true)
         {
@@ -242,6 +262,35 @@ while(rollingratfight == true)
             } 
     }
 
+}
+
+ratfight();
+
+static void spiderfight()
+{
+            
+bool rollingratfight = true;
+bool spicyspiderfight = true;
+
+int playerhp = 0;
+int playerhpmax = 0;
+int playerdamage = 0;
+
+int rollingrathp = 50;
+int rollingratdamage = 5;
+
+int spicyspiderhp = 250;
+int spicyspiderdamage = 20;
+
+int tremblingtrollhp = 1000;
+int tremblingtrolldamage = 75;
+
+while (spicyspiderfight)
+    {
+         
+    }
+
+}
 
 
 }
