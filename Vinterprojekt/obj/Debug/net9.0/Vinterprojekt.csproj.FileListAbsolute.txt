@@ -1,0 +1,14 @@
+C:\Users\bielawski.jakub\Documents\Programing 1\Vinterprojekt 2025-2026\Vinterprojekt\bin\Debug\net9.0\Vinterprojekt.exe
+C:\Users\bielawski.jakub\Documents\Programing 1\Vinterprojekt 2025-2026\Vinterprojekt\bin\Debug\net9.0\Vinterprojekt.deps.json
+C:\Users\bielawski.jakub\Documents\Programing 1\Vinterprojekt 2025-2026\Vinterprojekt\bin\Debug\net9.0\Vinterprojekt.runtimeconfig.json
+C:\Users\bielawski.jakub\Documents\Programing 1\Vinterprojekt 2025-2026\Vinterprojekt\bin\Debug\net9.0\Vinterprojekt.dll
+C:\Users\bielawski.jakub\Documents\Programing 1\Vinterprojekt 2025-2026\Vinterprojekt\bin\Debug\net9.0\Vinterprojekt.pdb
+C:\Users\bielawski.jakub\Documents\Programing 1\Vinterprojekt 2025-2026\Vinterprojekt\obj\Debug\net9.0\Vinterprojekt.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\bielawski.jakub\Documents\Programing 1\Vinterprojekt 2025-2026\Vinterprojekt\obj\Debug\net9.0\Vinterprojekt.AssemblyInfoInputs.cache
+C:\Users\bielawski.jakub\Documents\Programing 1\Vinterprojekt 2025-2026\Vinterprojekt\obj\Debug\net9.0\Vinterprojekt.AssemblyInfo.cs
+C:\Users\bielawski.jakub\Documents\Programing 1\Vinterprojekt 2025-2026\Vinterprojekt\obj\Debug\net9.0\Vinterprojekt.csproj.CoreCompileInputs.cache
+C:\Users\bielawski.jakub\Documents\Programing 1\Vinterprojekt 2025-2026\Vinterprojekt\obj\Debug\net9.0\Vinterprojekt.dll
+C:\Users\bielawski.jakub\Documents\Programing 1\Vinterprojekt 2025-2026\Vinterprojekt\obj\Debug\net9.0\refint\Vinterprojekt.dll
+C:\Users\bielawski.jakub\Documents\Programing 1\Vinterprojekt 2025-2026\Vinterprojekt\obj\Debug\net9.0\Vinterprojekt.pdb
+C:\Users\bielawski.jakub\Documents\Programing 1\Vinterprojekt 2025-2026\Vinterprojekt\obj\Debug\net9.0\Vinterprojekt.genruntimeconfig.cache
+C:\Users\bielawski.jakub\Documents\Programing 1\Vinterprojekt 2025-2026\Vinterprojekt\obj\Debug\net9.0\ref\Vinterprojekt.dll
