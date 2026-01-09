@@ -1,6 +1,5 @@
-﻿
-using System.Data;
-using System.Linq.Expressions;
+﻿using System;
+using System.Threading;
 
 
 
@@ -22,8 +21,8 @@ Console.ForegroundColor = ConsoleColor.DarkCyan;
 string line = "Ward: Hello fellow wanderer, are you interested in entering the dungeon?  (y/n)";
 foreach (char c in line)
 {
-Console.Write(c);
-Thread.Sleep(25);
+    Console.Write(c);
+    Thread.Sleep(25);
 }
 
 Console.WriteLine();
@@ -37,125 +36,126 @@ string answer = Console.ReadLine();
 while (enterdung == true)
 {
     if (answer == "y")
-{
-    Thread.Sleep(250);
-    Console.Clear();
-    Thread.Sleep(250);
-    Console.ForegroundColor = ConsoleColor.DarkCyan;
-    string line2 = "Ward: Alright lets get started";
-    foreach (char c in line2)
     {
-    Console.Write(c);
-    Thread.Sleep(25);
-    }
+        Thread.Sleep(250);
+        Console.Clear();
+        Thread.Sleep(250);
+        Console.ForegroundColor = ConsoleColor.DarkCyan;
+        string line2 = "Ward: Alright lets get started";
+        foreach (char c in line2)
+        {
+            Console.Write(c);
+            Thread.Sleep(25);
+        }
 
-Console.WriteLine();
-Console.ResetColor();
+        Console.WriteLine();
+        Console.ResetColor();
 
-Thread.Sleep(250);
-Console.Clear();
-Thread.Sleep(250);
+        Thread.Sleep(250);
+        Console.Clear();
+        Thread.Sleep(250);
 
-    Console.ForegroundColor = ConsoleColor.DarkCyan;
-    string line3 = "Ward: Firstly, you're up against the ";
-    foreach (char c in line3)
-    {
-    Console.Write(c);
-    Thread.Sleep(25);
-    }
+        Console.ForegroundColor = ConsoleColor.DarkCyan;
+        string line3 = "Ward: Firstly, you're up against the ";
+        foreach (char c in line3)
+        {
+            Console.Write(c);
+            Thread.Sleep(25);
+        }
 
-Console.ResetColor();
-
-
-    Console.ForegroundColor = ConsoleColor.Red;
-    string line4 = "Rolling Rat";
-    foreach (char c in line4)
-    {
-    Console.Write(c);
-    Thread.Sleep(25);
-    }
-
-Console.WriteLine();
-Console.ResetColor();
-
-Thread.Sleep(1000);
-Console.Clear();
-Thread.Sleep(1000);
+        Console.ResetColor();
 
 
-    Console.ForegroundColor = ConsoleColor.Green;
-    string line5 = "Choose your class  (dmg/hp)  (1-3)";
-    foreach (char c in line5)
-    {
-    Console.Write(c);
-    Thread.Sleep(25);
-    }
+        Console.ForegroundColor = ConsoleColor.Red;
+        string line4 = "Rolling Rat";
+        foreach (char c in line4)
+        {
+            Console.Write(c);
+            Thread.Sleep(25);
+        }
 
-    Console.WriteLine();
+        Console.WriteLine();
+        Console.ResetColor();
 
-    Console.ForegroundColor = ConsoleColor.Blue;
-    string line6 = "1. Warrior  100/25";
-    foreach (char c in line6)
-    {
-    Console.Write(c);
-    Thread.Sleep(25);
-    }
+        Thread.Sleep(1000);
+        Console.Clear();
+        Thread.Sleep(1000);
 
-    Console.WriteLine();
 
-    Console.ForegroundColor = ConsoleColor.Magenta;
-    string line7 = "2. Mage  75/40";
-    foreach (char c in line7)
-    {
-    Console.Write(c);
-    Thread.Sleep(25);
-    }
+        Console.ForegroundColor = ConsoleColor.Green;
+        string line5 = "Choose your class  (dmg/hp)  (1-3)";
+        foreach (char c in line5)
+        {
+            Console.Write(c);
+            Thread.Sleep(25);
+        }
 
-    Console.WriteLine();
+        Console.WriteLine();
 
-    Console.ForegroundColor = ConsoleColor.DarkGray;
-    string line8 = "3. Juggernaut  150/15";
-    foreach (char c in line8)
-    {
-    Console.Write(c);
-    Thread.Sleep(25);
-    }
+        Console.ForegroundColor = ConsoleColor.Blue;
+        string line6 = "1. Warrior  100/25";
+        foreach (char c in line6)
+        {
+            Console.Write(c);
+            Thread.Sleep(25);
+        }
 
-    Console.ResetColor();
-    Console.WriteLine();
+        Console.WriteLine();
 
-    string clas = Console.ReadLine();
+        Console.ForegroundColor = ConsoleColor.Magenta;
+        string line7 = "2. Mage  75/40";
+        foreach (char c in line7)
+        {
+            Console.Write(c);
+            Thread.Sleep(25);
+        }
 
-    if (clas == "1")
+        Console.WriteLine();
+
+        Console.ForegroundColor = ConsoleColor.DarkGray;
+        string line8 = "3. Juggernaut  150/15";
+        foreach (char c in line8)
+        {
+            Console.Write(c);
+            Thread.Sleep(25);
+        }
+
+        Console.ResetColor();
+        Console.WriteLine();
+
+        string clas = Console.ReadLine();
+
+        if (clas == "1")
         {
             playerhp = 100;
             playerhpmax = 100;
             playerdamage = 25;
         }
-    else if (clas == "2")
+        else if (clas == "2")
         {
             playerhp = 75;
             playerhpmax = 75;
             playerdamage = 40;
         }
-    else if (clas == "3")
+        else if (clas == "3")
         {
             playerhp = 150;
             playerhpmax = 150;
             playerdamage = 15;
         }
-    Console.Clear();
-    Thread.Sleep(1000);
-    Console.ForegroundColor = ConsoleColor.DarkGreen;
-    Console.WriteLine("<<<[Dungeon]>>>");
-    Console.ResetColor();
-    Console.WriteLine();
-    Thread.Sleep(1000);
+
+        Console.Clear();
+        Thread.Sleep(1000);
+        Console.ForegroundColor = ConsoleColor.DarkGreen;
+        Console.WriteLine("<<<[Dungeon]>>>");
+        Console.ResetColor();
+        Console.WriteLine();
+        Thread.Sleep(1000);
 
 
         bool rollingratfight = true;
-        bool spicyspiderfight = true;
-        bool tremblingtrollfight = true;
+        bool spicyspiderfight = false;
+        bool tremblingtrollfight = false;
 
         while (rollingratfight)
         {
@@ -245,49 +245,6 @@ Thread.Sleep(1000);
             }
         }
 
-
-    Console.ForegroundColor = ConsoleColor.DarkCyan;
-    string line9 = "Ward: Looks like you're ready for someone else";
-    foreach (char c in line9)
-    {
-    Console.Write(c);
-    Thread.Sleep(25);
-    }
-
-Console.ResetColor();
-
-Thread.Sleep(1000);
-Console.Clear();
-Thread.Sleep(1000);
-
-
-    Console.ForegroundColor = ConsoleColor.DarkCyan;
-    string line10 = "Ward: Get ready to go against the ";
-    foreach (char c in line10)
-    {
-    Console.Write(c);
-    Thread.Sleep(25);
-    }
-
-Console.ResetColor();
-
-
-    Console.ForegroundColor = ConsoleColor.Red;
-    string line11 = "Spicy Spider";
-    foreach (char c in line11)
-    {
-    Console.Write(c);
-    Thread.Sleep(25);
-    }
-
-Console.WriteLine();
-Console.ResetColor();
-
-Thread.Sleep(1000);
-Console.Clear();
-Thread.Sleep(1000);
-
-
         while (spicyspiderfight)
         {
             spicyspiderhp = 250;
@@ -318,16 +275,16 @@ Thread.Sleep(1000);
             if (playerhp <= 0)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("You died! Want to try again or fight Rolling rat? (1/2)");
+                Console.WriteLine("You died! Want to try again? (y/n)");
                 Console.ResetColor();
                 string retry = Console.ReadLine().ToLower();
 
-                if (retry == "1")
+                if (retry == "y")
                 {
                     playerhp = playerhpmax;
                     continue;
                 }
-                else if (retry == "2")
+                else
                 {
                     rollingratfight = true;
                     spicyspiderfight = false;
@@ -338,11 +295,11 @@ Thread.Sleep(1000);
 
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("Fight again (Reward)     or     Go against the Trembling Troll     (1/2)");
-            string Choice = Console.ReadLine();
+            string Choice2 = Console.ReadLine();
             Console.Clear();
             Console.ResetColor();
 
-            if (Choice == "1")
+            if (Choice2 == "1")
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("You gained +250hp  +50dmg as a reward!");
@@ -369,15 +326,13 @@ Thread.Sleep(1000);
                 Console.Clear();
                 Console.ResetColor();
             }
-            else if (Choice == "2")
+            else if (Choice2 == "2")
             {
-                rollingratfight = false;
                 spicyspiderfight = false;
                 tremblingtrollfight = true;
                 playerhp = playerhpmax;
             }
         }
-
 
         while (tremblingtrollfight)
         {
@@ -409,37 +364,31 @@ Thread.Sleep(1000);
             if (playerhp <= 0)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("You died! Want to try again or go back to Spicy Spider? (1/2)");
+                Console.WriteLine("You died! Want to try again? (y/n)");
                 Console.ResetColor();
-                string retry = Console.ReadLine();
+                string retry = Console.ReadLine().ToLower();
 
-                if (retry == "1")
+                if (retry == "y")
                 {
                     playerhp = playerhpmax;
                     continue;
                 }
-                else if (retry == "2")
+                else
                 {
                     spicyspiderfight = true;
                     tremblingtrollfight = false;
                     playerhp = playerhpmax;
                     break;
                 }
-                else
-                {
-                    Console.WriteLine("ok, goodbye");
-                    Thread.Sleep(1000);
-                    Environment.Exit(0);
-                }
             }
 
             Console.ForegroundColor = ConsoleColor.DarkCyan;
             Console.WriteLine("Fight again (Reward)     or     Finish the Dungeon     (1/2)");
-            string Choice2 = Console.ReadLine();
+            string Choice3 = Console.ReadLine();
             Console.Clear();
             Console.ResetColor();
 
-            if (Choice2 == "1")
+            if (Choice3 == "1")
             {
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("You gained +500hp  +100dmg as a reward!");
@@ -466,7 +415,7 @@ Thread.Sleep(1000);
                 Console.Clear();
                 Console.ResetColor();
             }
-            else if (Choice2 == "2")
+            else if (Choice3 == "2")
             {
                 tremblingtrollfight = false;
                 Console.ForegroundColor = ConsoleColor.DarkCyan;
