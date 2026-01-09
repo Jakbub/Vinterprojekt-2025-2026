@@ -12,3 +12,4 @@ C:\Users\bielawski.jakub\Documents\Programing 1\Vinterprojekt 2025-2026\Vinterpr
 C:\Users\bielawski.jakub\Documents\Programing 1\Vinterprojekt 2025-2026\Vinterprojekt\obj\Debug\net9.0\Vinterprojekt.pdb
 C:\Users\bielawski.jakub\Documents\Programing 1\Vinterprojekt 2025-2026\Vinterprojekt\obj\Debug\net9.0\Vinterprojekt.genruntimeconfig.cache
 C:\Users\bielawski.jakub\Documents\Programing 1\Vinterprojekt 2025-2026\Vinterprojekt\obj\Debug\net9.0\ref\Vinterprojekt.dll
+C:\Users\bielawski.jakub\Documents\Programing 1\Vinterprojekt 2025-2026\Vinterprojekt\obj\Debug\net9.0\Vinterprojekt.sourcelink.json
