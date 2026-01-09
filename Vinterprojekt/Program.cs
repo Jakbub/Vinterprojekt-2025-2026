@@ -275,21 +275,27 @@ while (enterdung == true)
             if (playerhp <= 0)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("You died! Want to try again? (y/n)");
+                Console.WriteLine("You died! Retry Spicy Spider or go back to Rolling Rat for reward? (1/2)");
                 Console.ResetColor();
-                string retry = Console.ReadLine().ToLower();
+                string retry = Console.ReadLine();
 
-                if (retry == "y")
+                if (retry == "1")
                 {
                     playerhp = playerhpmax;
                     continue;
                 }
-                else
+                else if (retry == "2")
                 {
                     rollingratfight = true;
                     spicyspiderfight = false;
                     playerhp = playerhpmax;
                     break;
+                }
+                else
+                {
+                    Console.WriteLine("ok, goodbye");
+                    Thread.Sleep(1000);
+                    Environment.Exit(0);
                 }
             }
 
@@ -364,21 +370,27 @@ while (enterdung == true)
             if (playerhp <= 0)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("You died! Want to try again? (y/n)");
+                Console.WriteLine("You died! Retry Trembling Troll or go back to Spicy Spider for reward? (1/2)");
                 Console.ResetColor();
-                string retry = Console.ReadLine().ToLower();
+                string retry = Console.ReadLine();
 
-                if (retry == "y")
+                if (retry == "1")
                 {
                     playerhp = playerhpmax;
                     continue;
                 }
-                else
+                else if (retry == "2")
                 {
                     spicyspiderfight = true;
                     tremblingtrollfight = false;
                     playerhp = playerhpmax;
                     break;
+                }
+                else
+                {
+                    Console.WriteLine("ok, goodbye");
+                    Thread.Sleep(1000);
+                    Environment.Exit(0);
                 }
             }
 
