@@ -2,7 +2,8 @@
 using System.Threading;
 
 
-
+static void run()
+{
 int playerhp = 0;
 int playerhpmax = 0;
 int playerdamage = 0;
@@ -462,5 +463,11 @@ while (enterdung == true)
         }
     }
 }
+
+Console.ReadLine();
+  
+}
+run();
+
 
 Console.ReadLine();
