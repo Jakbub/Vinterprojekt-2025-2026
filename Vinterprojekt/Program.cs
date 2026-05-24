@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading;
 
-
 static void run()
 {
 int playerhp = 0;
@@ -29,13 +28,9 @@ foreach (char c in line)
 Console.WriteLine();
 Console.ResetColor();
 
-bool enterdung = true;
-
 string answer = Console.ReadLine();
 
 
-while (enterdung == true)
-{
     if (answer == "y")
     {
         Thread.Sleep(250);
@@ -153,321 +148,228 @@ while (enterdung == true)
         Console.WriteLine();
         Thread.Sleep(1000);
 
+        int stage = 1;
 
-        bool rollingratfight = true;
-        bool spicyspiderfight = false;
-        bool tremblingtrollfight = false;
-
-        while (rollingratfight)
+        while (true)
         {
-            rollingrathp = 50;
-            while (playerhp > 0 && rollingrathp > 0)
+            //rollingrat fight
+            if (stage == 1)
             {
-                int Playerdamage = Random.Shared.Next(playerdamage);
-                rollingrathp -= Playerdamage;
-                rollingrathp = Math.Max(0, rollingrathp);
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($" you did {Playerdamage} to Rolling Rat");
-                Console.ResetColor();
-
-                int enemydamage = Random.Shared.Next(5);
-                playerhp -= enemydamage;
-                playerhp = Math.Max(0, playerhp);
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine($"Rolling rat did {enemydamage} to you");
-                Console.ResetColor();
-                Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.WriteLine($"You: {playerhp} Rolling rat: {rollingrathp}");
-                Console.ResetColor();
-
-                Console.WriteLine("Continue");
-                Console.ReadLine();
-                Console.Clear();
-            }
-
-            if (playerhp <= 0)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("You died! Want to try again? (y/n)");
-                Console.ResetColor();
-                string retry = Console.ReadLine().ToLower();
-
-                if (retry == "y")
-                {
-                    playerhp = playerhpmax;
-                    continue;
-                }
-                else
-                {
-                    Console.WriteLine("ok, goodbye");
-                    Thread.Sleep(1000);
-                    Environment.Exit(0);
-                }
-            }
-
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.WriteLine("Fight again (Reward)     or     Go against the Spicy Spider     (1/2)");
-            string Choice = Console.ReadLine();
-            Console.Clear();
-            Console.ResetColor();
-
-            if (Choice == "1")
-            {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("You gained +50hp  +15dmg as a reward!");
-                Console.Clear();
-                Console.ResetColor();
-
-                playerhpmax += 50;
-                playerdamage += 15;
-                playerhp = playerhpmax;
                 rollingrathp = 50;
 
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("Your new stats");
-                Console.WriteLine($"HP: {playerhp}/{playerhpmax}");
-                Console.WriteLine($"Damage: {playerdamage}");
-                Thread.Sleep(2000);
-                Console.Clear();
-                Console.ResetColor();
-
-                Thread.Sleep(2000);
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine("...Prepare for next round");
-                Thread.Sleep(2000);
-                Console.Clear();
-                Console.ResetColor();
-            }
-            else if (Choice == "2")
-            {
-                rollingratfight = false;
-                spicyspiderfight = true;
-                playerhp = playerhpmax;
-            }
-        }
-
-        while (spicyspiderfight)
-        {
-            spicyspiderhp = 250;
-            while (playerhp > 0 && spicyspiderhp > 0)
-            {
-                int Playerdamage = Random.Shared.Next(playerdamage);
-                spicyspiderhp -= Playerdamage;
-                spicyspiderhp = Math.Max(0, spicyspiderhp);
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($" you did {Playerdamage} to Spicy Spider");
-                Console.ResetColor();
-
-                int enemydamage = Random.Shared.Next(20);
-                playerhp -= enemydamage;
-                playerhp = Math.Max(0, playerhp);
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine($"Spicy Spider did {enemydamage} to you");
-                Console.ResetColor();
-                Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.WriteLine($"You: {playerhp} Spicy Spider: {spicyspiderhp}");
-                Console.ResetColor();
-
-                Console.WriteLine("Continue");
-                Console.ReadLine();
-                Console.Clear();
-            }
-
-            if (playerhp <= 0)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("You died! Retry Spicy Spider or go back to Rolling Rat for reward? (1/2)");
-                Console.ResetColor();
-                string retry = Console.ReadLine();
-
-                if (retry == "1")
+                while (playerhp > 0 && rollingrathp > 0)
                 {
+                    int Playerdamage = Random.Shared.Next(playerdamage);
+                    rollingrathp -= Playerdamage;
+                    rollingrathp = Math.Max(0, rollingrathp);
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine($" you did {Playerdamage} to Rolling Rat");
+                    Console.ResetColor();
+
+                    int enemydamage = Random.Shared.Next(5);
+                    playerhp -= enemydamage;
+                    playerhp = Math.Max(0, playerhp);
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine($"Rolling rat did {enemydamage} to you");
+                    Console.ResetColor();
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    Console.WriteLine($"You: {playerhp} Rolling rat: {rollingrathp}");
+                    Console.ResetColor();
+
+                    Console.WriteLine("Continue");
+                    Console.ReadLine();
+                    Console.Clear();
+                }
+
+                Console.WriteLine("1 = Fight Again, 2 = Go to Spicy Spider");
+                string choice = Console.ReadLine();
+
+                if (choice == "1")
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
+                    Console.WriteLine("Ward: You grow stronger from the battle...");
+                    Console.ResetColor();
+
+                    Console.WriteLine("+50 HP  +15 Damage");
+
+                    playerhpmax += 50;
+                    playerdamage += 15;
                     playerhp = playerhpmax;
+
+                    Thread.Sleep(1500);
+                    Console.Clear();
+                }
+                else if (choice == "2")
+                {
+                    stage = 2;
+                    playerhp = playerhpmax;
+
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
+                    Console.WriteLine("Ward: Deeper you go...");
+                    Console.ResetColor();
+
+                    Thread.Sleep(1500);
+                    Console.Clear();
                     continue;
                 }
-                else if (retry == "2")
-                {
-                    rollingratfight = true;
-                    spicyspiderfight = false;
-                    playerhp = playerhpmax;
-                    break;
-                }
-                else
-                {
-                    Console.WriteLine("ok, goodbye");
-                    Thread.Sleep(1000);
-                    Environment.Exit(0);
-                }
             }
 
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.WriteLine("Fight again (Reward)     or     Go against the Trembling Troll     (1/2)");
-            string Choice2 = Console.ReadLine();
-            Console.Clear();
-            Console.ResetColor();
-
-            if (Choice2 == "1")
+            //spicyspiderfight
+            else if (stage == 2)
             {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("You gained +250hp  +50dmg as a reward!");
-                Console.Clear();
-                Console.ResetColor();
-
-                playerhpmax += 250;
-                playerdamage += 50;
-                playerhp = playerhpmax;
                 spicyspiderhp = 250;
 
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("Your new stats");
-                Console.WriteLine($"HP: {playerhp}/{playerhpmax}");
-                Console.WriteLine($"Damage: {playerdamage}");
-                Thread.Sleep(2000);
-                Console.Clear();
-                Console.ResetColor();
-
-                Thread.Sleep(2000);
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine("...Prepare for next round");
-                Thread.Sleep(2000);
-                Console.Clear();
-                Console.ResetColor();
-            }
-            else if (Choice2 == "2")
-            {
-                spicyspiderfight = false;
-                tremblingtrollfight = true;
-                playerhp = playerhpmax;
-            }
-        }
-
-        while (tremblingtrollfight)
-        {
-            tremblingtrollhp = 1000;
-            while (playerhp > 0 && tremblingtrollhp > 0)
-            {
-                int Playerdamage = Random.Shared.Next(playerdamage);
-                tremblingtrollhp -= Playerdamage;
-                tremblingtrollhp = Math.Max(0, tremblingtrollhp);
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine($" you did {Playerdamage} to Trembling Troll");
-                Console.ResetColor();
-
-                int enemydamage = Random.Shared.Next(50);
-                playerhp -= enemydamage;
-                playerhp = Math.Max(0, playerhp);
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine($"Trembling Troll did {enemydamage} to you");
-                Console.ResetColor();
-                Console.ForegroundColor = ConsoleColor.DarkYellow;
-                Console.WriteLine($"You: {playerhp} Trembling Troll: {tremblingtrollhp}");
-                Console.ResetColor();
-
-                Console.WriteLine("Continue");
-                Console.ReadLine();
-                Console.Clear();
-            }
-
-            if (playerhp <= 0)
-            {
-                Console.ForegroundColor = ConsoleColor.Red;
-                Console.WriteLine("You died! Retry Trembling Troll or go back to Spicy Spider for reward? (1/2)");
-                Console.ResetColor();
-                string retry = Console.ReadLine();
-
-                if (retry == "1")
+                while (playerhp > 0 && spicyspiderhp > 0)
                 {
+                    int Playerdamage = Random.Shared.Next(playerdamage);
+                    spicyspiderhp -= Playerdamage;
+                    spicyspiderhp = Math.Max(0, spicyspiderhp);
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine($" you did {Playerdamage} to Spicy Spider");
+                    Console.ResetColor();
+
+                    int enemydamage = Random.Shared.Next(40);
+                    playerhp -= enemydamage;
+                    playerhp = Math.Max(0, playerhp);
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine($"Spicy Spider did {enemydamage} to you");
+                    Console.ResetColor();
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    Console.WriteLine($"You: {playerhp} Spicy Spider: {spicyspiderhp}");
+                    Console.ResetColor();
+
+                    Console.WriteLine("Continue");
+                    Console.ReadLine();
+                    Console.Clear();
+                }
+
+                Console.WriteLine("1 = Fight Again, 2 = Back to Rat, 3 = Troll");
+                string choice = Console.ReadLine();
+
+                if (choice == "1")
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
+                    Console.WriteLine("Ward: The spider's venom strengthens you...");
+                    Console.ResetColor();
+
+                    Console.WriteLine("+120 HP  +25 Damage");
+
+                    playerhpmax += 120;
+                    playerdamage += 25;
                     playerhp = playerhpmax;
+
+                    Thread.Sleep(1500);
+                    Console.Clear();
+                }
+                else if (choice == "2")
+                {
+                    stage = 1;
+                    playerhp = playerhpmax;
+
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
+                    Console.WriteLine("Ward: You retreat...");
+                    Console.ResetColor();
+
+                    Thread.Sleep(1500);
+                    Console.Clear();
                     continue;
                 }
-                else if (retry == "2")
+                else if (choice == "3")
                 {
-                    spicyspiderfight = true;
-                    tremblingtrollfight = false;
+                    stage = 3;
                     playerhp = playerhpmax;
-                    break;
+
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
+                    Console.WriteLine("Ward: A terrifying presence awaits...");
+                    Console.ResetColor();
+
+                    Thread.Sleep(1500);
+                    Console.Clear();
+                    continue;
+                }
+            }
+
+            //tremblingtrollfight
+            else if (stage == 3)
+            {
+                tremblingtrollhp = 1000;
+
+                while (playerhp > 0 && tremblingtrollhp > 0)
+                {
+                    int Playerdamage = Random.Shared.Next(playerdamage);
+                    tremblingtrollhp -= Playerdamage;
+                    tremblingtrollhp = Math.Max(0, tremblingtrollhp);
+                    Console.ForegroundColor = ConsoleColor.Green;
+                    Console.WriteLine($" you did {Playerdamage} to Trembling Troll");
+                    Console.ResetColor();
+
+                    int enemydamage = Random.Shared.Next(75);
+                    playerhp -= enemydamage;
+                    playerhp = Math.Max(0, playerhp);
+                    Console.ForegroundColor = ConsoleColor.DarkRed;
+                    Console.WriteLine($"Trembling troll did {enemydamage} to you");
+                    Console.ResetColor();
+                    Console.ForegroundColor = ConsoleColor.DarkYellow;
+                    Console.WriteLine($"You: {playerhp} Trembling troll: {tremblingtrollhp}");
+                    Console.ResetColor();
+
+                    Console.WriteLine("Continue");
+                    Console.ReadLine();
+                    Console.Clear();
+                }
+
+                if (playerhp <= 0)
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
+                    Console.WriteLine("Ward: Even the strongest fall...");
+                    Console.ResetColor();
+
+                    Console.WriteLine("1 = Retry, 2 = Back to Spider");
+                    string c = Console.ReadLine();
+
+                    if (c == "1")
+                    {
+                        playerhp = playerhpmax;
+                        continue;
+                    }
+                    else
+                    {
+                        stage = 2;
+                        playerhp = playerhpmax;
+                        continue;
+                    }
+                }
+
+                Console.WriteLine("1 = Fight Again, 2 = Finish");
+                string choice = Console.ReadLine();
+
+                if (choice == "1")
+                {
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
+                    Console.WriteLine("Ward: You feel unstoppable...");
+                    Console.ResetColor();
+
+                    Console.WriteLine("+500 HP  +100 Damage");
+
+                    playerhpmax += 500;
+                    playerdamage += 100;
+                    playerhp = playerhpmax;
+
+                    Thread.Sleep(1500);
+                    Console.Clear();
                 }
                 else
                 {
-                    Console.WriteLine("ok, goodbye");
-                    Thread.Sleep(1000);
-                    Environment.Exit(0);
+                    Console.ForegroundColor = ConsoleColor.DarkCyan;
+                    Console.WriteLine("Ward: You have conquered the dungeon...");
+                    Thread.Sleep(1500);
+                    Console.Clear();
+                    Console.ResetColor();
+                    break;
                 }
             }
-
-            Console.ForegroundColor = ConsoleColor.DarkCyan;
-            Console.WriteLine("Fight again (Reward)     or     Finish the Dungeon     (1/2)");
-            string Choice3 = Console.ReadLine();
-            Console.Clear();
-            Console.ResetColor();
-
-            if (Choice3 == "1")
-            {
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("You gained +500hp  +100dmg as a reward!");
-                Console.Clear();
-                Console.ResetColor();
-
-                playerhpmax += 500;
-                playerdamage += 100;
-                playerhp = playerhpmax;
-                tremblingtrollhp = 1000;
-
-                Console.ForegroundColor = ConsoleColor.Cyan;
-                Console.WriteLine("Your new stats");
-                Console.WriteLine($"HP: {playerhp}/{playerhpmax}");
-                Console.WriteLine($"Damage: {playerdamage}");
-                Thread.Sleep(2000);
-                Console.Clear();
-                Console.ResetColor();
-
-                Thread.Sleep(2000);
-                Console.ForegroundColor = ConsoleColor.DarkRed;
-                Console.WriteLine("...Prepare for next round");
-                Thread.Sleep(2000);
-                Console.Clear();
-                Console.ResetColor();
-            }
-            else if (Choice3 == "2")
-            {
-                tremblingtrollfight = false;
-                Console.ForegroundColor = ConsoleColor.DarkCyan;
-                Console.WriteLine("Congratulations! You have cleared the dungeon!");
-                Console.ResetColor();
-                Thread.Sleep(2000);
-                Environment.Exit(0);
-            }
-        }
-    }
-    else if (answer == "n")
-    {
-        Console.ForegroundColor = ConsoleColor.DarkCyan;
-        string line2 = "Ward: Very well then, if you ever change your mind just tell me (y/n)";
-        foreach (char c in line2)
-        {
-            Console.Write(c);
-            Thread.Sleep(25);
-        }
-
-        string changemind = Console.ReadLine();
-
-        if (changemind == "y")
-        {
-            enterdung = true;
-            answer = "y";
-        }
-        else
-        {
-            enterdung = false;
-            Environment.Exit(500);
         }
     }
 }
 
-Console.ReadLine();
-  
-}
 run();
-
-
-Console.ReadLine();
